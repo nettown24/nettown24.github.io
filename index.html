@@ -26,6 +26,8 @@
             border: 1px solid #000;
             text-align: center;
             padding: 8px;
+            text-align: left;
+            white-space: pre-wrap;
         }
 
         th {
@@ -58,6 +60,25 @@
             <td id="key2"></td>
         </tr>
     </table>
+    <br><br>
+    <h1>Assessment2</h1>
+    <table>
+        <tr>
+            <th>Tag Fired</th>
+        </tr>
+        <tr>
+            <td id="tag1"></td>
+        </tr>
+    </table>
+    <script>
+        window.addEventListener("load", function () {
+            const customeridValue = document.getElementById("key1").innerText;
+            const customeremailValue = document.getElementById("key2").innerText;
+            const scriptContent = `&lt;script type="text/javascript"&gt;(function(a,b,c,d,e,f,g){e['ire_o']=c;e[c]=e[c]||function(){(e[c].a=e[c].a||[]).push(arguments)};f=d.createElement(b);g=d.getElementsByTagName(b)[0];f.async=1;f.src=a;g.parentNode.insertBefore(f,g);})('https://utt.impactcdn.com/A2788006-de3d-4011-a57c-c4737e79de0365535.js','script','ire',document,window);<br><br>ire('identify', {customerid: '<b>${customeridValue}</b>', /*INSERT key1*/ customeremail: '<b>${customeremailValue}</b>' /*INSERT key2*/});&lt;/script&gt;`;
+
+            document.getElementById("tag1").innerHTML = scriptContent;
+        });
+    </script>
 </body>
 
 </html>
